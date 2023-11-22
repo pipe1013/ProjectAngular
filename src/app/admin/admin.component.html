@@ -1,0 +1,27 @@
+<!-- src/app/admin/admin.component.html -->
+
+<div>
+    <h2>Panel de Administrador - Usuarios Registrados</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Usuario</th>
+          <th>Email</th>
+          <th>Contraseña</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users; let i = index">
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>
+            <button (click)="deleteUser(i)">Eliminar</button>
+            <button (click)="updateUser(i)">Actualizar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

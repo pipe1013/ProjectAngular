@@ -1,0 +1,34 @@
+<!-- src/app/register/register.component.html -->
+
+<!-- container -->
+<div class="container">
+    <!-- form -->
+    <form id="form" action="" method="" >
+      <!-- form heading -->
+      <h3>signup</h3>
+      <!-- form inputs -->
+      <fieldset>
+        <label for="name">Your name:</label>
+        <input type="text" id="name" [(ngModel)]="username"  tabindex="1" required>
+      </fieldset>
+      <fieldset>
+          <label for="phone">Email address:</label>
+          <input [(ngModel)]="email" type="email" required>
+      </fieldset>
+      <fieldset>
+          <label for="phone">Password:</label>
+          <input type="password" name="password"  [(ngModel)]="password"  id="password" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="submit" (click)="register()">Registrarse</button>
+      </fieldset>
+      <!-- attribution -->
+        <p>¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión</a></p>
+    </form>
+
+
+
+
+
+
+

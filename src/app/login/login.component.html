@@ -1,0 +1,25 @@
+<!-- src/app/login/login.component.html -->
+
+
+<!-- container -->
+<div class="container">
+    <!-- form -->
+    <form id="form" action="" method="" >
+      <!-- form heading -->
+      <h3>login</h3>
+      <!-- form inputs -->
+      <fieldset>
+          <label for="phone">Usuario:</label>
+          <input type="text" id="username" [(ngModel)]="username" />
+      </fieldset>
+      <fieldset>
+          <label for="phone">Password:</label>
+          <input type="password" name="password" [(ngModel)]="password" id="password" required>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="submit" (click)="login()" >Iniciar sesión</button>
+      </fieldset>
+      <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
+    </form>
+
+  

@@ -1,25 +1,21 @@
-<!-- src/app/login/login.component.html -->
-
-
 <!-- container -->
 <div class="container">
-    <!-- form -->
-    <form id="form" action="" method="" >
-      <!-- form heading -->
-      <h3>login</h3>
-      <!-- form inputs -->
-      <fieldset>
-          <label for="phone">Usuario:</label>
-          <input type="text" id="username" [(ngModel)]="username" />
-      </fieldset>
-      <fieldset>
-          <label for="phone">Password:</label>
-          <input type="password" name="password" [(ngModel)]="password" id="password" required>
-      </fieldset>
-      <fieldset>
-        <button name="submit" type="submit" id="submit" (click)="login()" >Iniciar sesión</button>
-      </fieldset>
-      <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
-    </form>
-
-  
+  <!-- form -->
+  <form id="form" (ngSubmit)="login()" #loginForm="ngForm">
+    <!-- form heading -->
+    <h3>login</h3>
+    <!-- form inputs -->
+    <fieldset>
+      <label for="username">Usuario:</label>
+      <input type="text" id="username" name="username" [(ngModel)]="username" required />
+    </fieldset>
+    <fieldset>
+      <label for="password">Contraseña:</label>
+      <input type="password" id="password" name="password" [(ngModel)]="password" required />
+    </fieldset>
+    <fieldset>
+      <button type="submit" id="submit" [disabled]="!loginForm.valid">Iniciar sesión</button>
+    </fieldset>
+    <p>¿No tienes una cuenta? <a routerLink="/register">Regístrate</a></p>
+  </form>
+</div>

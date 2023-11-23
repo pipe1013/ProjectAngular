@@ -1,14 +1,17 @@
-// src/app/admin/admin.component.ts
+// admin.component.ts
 
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  styleUrls: ['./admin.component.css'] // Agrega esta línea
+  styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
   users: any[] = [];
+
+  constructor(private router: Router) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -25,12 +28,15 @@ export class AdminComponent implements OnInit {
   }
 
   updateUser(index: number): void {
-    // Implementa la lógica de actualización según tus necesidades
-    // Por ejemplo, podrías abrir un modal o navegar a una página de actualización
     console.log('Actualizar usuario:', this.users[index]);
   }
 
   private updateLocalStorage(): void {
     localStorage.setItem('users', JSON.stringify(this.users));
+  }
+
+  // Función para cerrar sesión
+  logout(): void {
+    this.router.navigate(['/login']);
   }
 }

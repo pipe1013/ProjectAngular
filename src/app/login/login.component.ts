@@ -1,5 +1,3 @@
-// src/app/login/login.component.ts
-
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
@@ -38,8 +36,11 @@ export class LoginComponent {
         text: `¡Bienvenido de nuevo, ${this.username}!`
       });
 
+      // Almacena el nombre de usuario en el localStorage
+      localStorage.setItem('currentUser', this.username);
+
       // Redirige al usuario a la interfaz de administrador después del inicio de sesión
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/dashboard']);
     } else {
       Swal.fire({
         icon: 'error',

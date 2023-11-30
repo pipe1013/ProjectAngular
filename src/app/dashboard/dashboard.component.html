@@ -1,0 +1,24 @@
+<div class="dashboard-container">
+    <div class="header">
+      <div class="company-info">
+        <img src="assets/icono.png" alt="Icono de usuario">
+        <span class="company-name">searchJob</span>
+      </div>
+      <img src="assets/user.png" alt="Icono de la empresa" (click)="showModal()">
+    </div>
+  
+    <div *ngIf="showUserName" class="user-info">
+      {{ userName }}
+    </div>
+    <div class="nav">
+      <ul>
+        <li><a href="#" (click)="viewProfile($event)">Perfil</a></li>
+        <li><a href="#" (click)="viewJobOffers($event)">Ofertas de Empleo</a></li>
+        <li><a href="#" (click)="viewAppliedOffers($event)">Administrar Ofertas</a></li>
+        <li>
+          <button (click)="logout()" class="logout-button">Cerrar sesión</button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  
